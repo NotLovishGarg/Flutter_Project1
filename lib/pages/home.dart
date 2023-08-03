@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'login.dart';
 
 class MyHome extends StatelessWidget {
   const MyHome({super.key});
@@ -39,15 +40,20 @@ class MyHome extends StatelessWidget {
                         child: Text(
                           " Lets Upgrade Your\n Learning Experience\n",
                           style: GoogleFonts.anekLatin(
-                              textStyle:
-                                  TextStyle(color: Colors.white, fontSize: 35)),
+                              textStyle: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 35,
+                                  fontWeight: FontWeight.bold)),
                         )))
               ]),
               SizedBox(
                 height: 30,
               ),
               ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginPage()));
+                  },
                   style: ElevatedButton.styleFrom(
                       fixedSize: Size(250, 50),
                       backgroundColor: Color.fromARGB(255, 144, 223, 79)),
