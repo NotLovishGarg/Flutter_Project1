@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'login.dart';
+import 'register.dart';
 
 class MyHome extends StatelessWidget {
   const MyHome({super.key});
@@ -117,7 +118,12 @@ class MyHome extends StatelessWidget {
                     style: TextStyle(fontSize: 15),
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Register()));
+                      },
                       child: Text(
                         "Register Here!",
                         style:

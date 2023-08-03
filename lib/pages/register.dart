@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'register.dart';
+import 'package:proj1/pages/login.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class Register extends StatelessWidget {
+  const Register({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
         backgroundColor: Colors.white,
         body: Container(
           child: Column(children: [
@@ -22,7 +21,7 @@ class LoginPage extends StatelessWidget {
                   child: Align(
                 alignment: Alignment.bottomLeft,
                 child: Text(
-                  " Sign In To\n Your Account\n",
+                  "  Register\n",
                   style: GoogleFonts.anekLatin(
                       textStyle: TextStyle(
                           color: Colors.white,
@@ -32,7 +31,7 @@ class LoginPage extends StatelessWidget {
               ))
             ]),
             SizedBox(
-              height: 40,
+              height: 20,
             ),
             Container(
                 width: 300,
@@ -45,7 +44,20 @@ class LoginPage extends StatelessWidget {
                       labelText: 'Email'),
                 )),
             SizedBox(
-              height: 15,
+              height: 10,
+            ),
+            Container(
+                width: 300,
+                child: TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.black)),
+                      hintText: 'Enter Email',
+                      labelText: 'Confirm Email'),
+                )),
+            SizedBox(
+              height: 10,
             ),
             Container(
                 width: 300,
@@ -59,99 +71,58 @@ class LoginPage extends StatelessWidget {
                     labelText: 'Password',
                   ),
                 )),
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Forgot Password?",
-                    style: GoogleFonts.anekLatin(
-                        textStyle: TextStyle(
-                            color: Color.fromARGB(255, 92, 154, 41),
-                            fontSize: 15)),
-                  )),
+            SizedBox(
+              height: 10,
             ),
+            Container(
+                width: 300,
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: Colors.black)),
+                    hintText: 'Enter Password Here',
+                    labelText: 'Confirm Password',
+                  ),
+                )),
             SizedBox(
               height: 15,
             ),
             ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoginPage()));
-                },
+                onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                    fixedSize: Size(300, 60),
+                    fixedSize: Size(300, 55),
                     backgroundColor: Color.fromARGB(255, 144, 223, 79)),
                 child: Text(
-                  "Login",
+                  "Register",
                   style: GoogleFonts.anekLatin(
                       textStyle: TextStyle(
                     color: Colors.black,
                     fontSize: 18,
                   )),
                 )),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              "Or Login With",
-              style: GoogleFonts.anekLatin(textStyle: TextStyle(fontSize: 15)),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Center(
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 70,
-                  ),
-                  OutlinedButton(
-                      onPressed: () {},
-                      style: OutlinedButton.styleFrom(fixedSize: Size(120, 30)),
-                      child: Text(
-                        "Google",
-                        style: TextStyle(color: Colors.black),
-                      )),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  OutlinedButton(
-                      onPressed: () {},
-                      style: OutlinedButton.styleFrom(fixedSize: Size(100, 30)),
-                      child: Text(
-                        "Facebook",
-                        style: TextStyle(color: Colors.black),
-                      )),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
             Row(
               children: [
                 SizedBox(
-                  width: 70,
+                  width: 110,
                 ),
                 Text(
-                  "Dont have an account?",
+                  "I have an account?",
                   style: TextStyle(fontSize: 15),
                 ),
                 TextButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Register()));
+                          MaterialPageRoute(builder: (context) => LoginPage()));
                     },
                     child: Text(
-                      "Register Here!",
+                      "Login!",
                       style: TextStyle(color: Color.fromARGB(255, 85, 187, 48)),
                     ))
               ],
             )
           ]),
-        ),
-      ),
-    );
+        ));
   }
 }
