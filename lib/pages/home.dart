@@ -70,7 +70,55 @@ class MyHome extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              OutlinedButton(onPressed: () {}, child: Text("Google"))
+              Center(
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 70,
+                    ),
+                    OutlinedButton(
+                        onPressed: () {},
+                        style:
+                            OutlinedButton.styleFrom(fixedSize: Size(120, 30)),
+                        child: Text(
+                          "Google",
+                          style: TextStyle(color: Colors.black),
+                        )),
+                    SizedBox(
+                      width: 30,
+                    ),
+                    OutlinedButton(
+                        onPressed: () {},
+                        style:
+                            OutlinedButton.styleFrom(fixedSize: Size(100, 30)),
+                        child: Text(
+                          "Facebook",
+                          style: TextStyle(color: Colors.black),
+                        )),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 70,
+                  ),
+                  Text(
+                    "Dont have an account?",
+                    style: TextStyle(fontSize: 15),
+                  ),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Register Here!",
+                        style:
+                            TextStyle(color: Color.fromARGB(255, 85, 187, 48)),
+                      ))
+                ],
+              )
             ],
           ),
         ),
